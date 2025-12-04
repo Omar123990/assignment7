@@ -1,0 +1,48 @@
+@media (max-width: 991px) {
+  .scroll-box {
+    overflow: visible;
+    max-height: none;
+    scrollbar-width: none;
+  }
+  .scroll-box::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 1023px) {
+  html {
+    overflow: scroll;
+    font-size: 12px;
+  }
+  .min-h-750 {
+    min-height: auto;
+  }
+  main section {
+    align-items: flex-start !important;
+    padding-top: 60px;
+    height: auto !important;
+    min-height: 100vh;
+  }
+  html,
+  body {
+    overflow-y: auto;
+  }
+
+  main section {
+    height: auto !important;
+    min-height: auto !important;
+    align-items: flex-start !important;
+    padding-top: 0px;
+  }
+  .rounded-left-bottom {
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 0px;
+  }
+  .rounded-right-bottom {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 1rem;
+  }
+  .min-h-750 {
+    min-height: auto !important;
+  }
+}
