@@ -525,6 +525,7 @@ function updateRecipe(index) {
 
   // تحديث الصورة والنصوص
   recipeImage.src = recipe.image;
+  recipeImage.alt = recipe.name;
   recipeRating.innerText = recipe.rating;
   recipeReviews.innerText = recipe.reviews;
   prepTime.innerText = recipe.prepTime;
