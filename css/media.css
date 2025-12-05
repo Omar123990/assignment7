@@ -1,6 +1,7 @@
 @media (max-width: 991px) {
   .scroll-box {
     overflow: visible;
+    font-size: 12px;
     max-height: none;
     scrollbar-width: none;
   }
@@ -11,7 +12,6 @@
 @media (max-width: 1023px) {
   html {
     overflow: scroll;
-    font-size: 12px;
   }
   .min-h-750 {
     min-height: auto;
