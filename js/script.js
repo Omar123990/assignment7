@@ -221,7 +221,7 @@ var recipes = [
     ],
   },
   {
-    image: "images/Chicken-stir-fry.avif",
+    image: "images/Chicken-Stir-Fry.avif",
     rating: "4.5",
     reviews: "(324 reviews)",
     prepTime: "15 min",
