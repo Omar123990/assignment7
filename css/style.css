@@ -264,3 +264,9 @@ ul.nav {
   background-size: 200% 100%;
 }
 
+.nutrition-block {
+  flex-wrap: wrap;
+}
+.nutrition-block span {
+  white-space: normal !important;
+}
