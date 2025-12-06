@@ -540,6 +540,17 @@ function updateRecipe() {
     instructionsList.appendChild(li);
   }
 
+  chefsTipsContainer.innerHTML = "";
+for (var i = 0; i < recipe.chefsTips.length; i++) {
+  var tipDiv = document.createElement("div");
+  tipDiv.className = "d-flex border-color-orange bg-red mb-3 p-3 rounded-3";
+  tipDiv.innerHTML = `
+    <i class="fa-solid fa-circle-check align-self-center me-2 color-yellow fw-700"></i>
+    <p class="text-black text-opacity-75">${recipe.chefsTips[i]}</p>
+  `;
+  chefsTipsContainer.appendChild(tipDiv);
+}
+
     if (parseInt(recipe.cookTime) > 45) {
     longPrepMsg.style.display = "block";
   } else {
