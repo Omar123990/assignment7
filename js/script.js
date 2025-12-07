@@ -507,15 +507,11 @@ var carbon = document.getElementById("carbon");
 var fat = document.getElementById("fat");
 var fiber = document.getElementById("fiber");
 var sodium = document.getElementById("sodium");
-
-var currentRecipeIndex = 0;
-
 function updateRecipe() {
   var randomIndex = Math.floor(Math.random() * recipes.length);
   var recipe = recipes[randomIndex];
 
   recipeImage.src = recipe.image;
-
   recipeRating.innerHTML = recipe.rating;
   recipeReviews.innerHTML = recipe.reviews;
   prepTime.innerHTML = recipe.prepTime;
@@ -526,32 +522,28 @@ function updateRecipe() {
   recipeName.innerHTML = recipe.name;
   recipeDescription.innerHTML = recipe.description;
 
+
   ingredientsList.innerHTML = "";
   for (var i = 0; i < recipe.ingredients.length; i++) {
-    var li = document.createElement("li");
-    li.innerHTML = recipe.ingredients[i];
-    ingredientsList.appendChild(li);
+    ingredientsList.innerHTML += "<li>" + recipe.ingredients[i] + "</li>";
   }
 
   instructionsList.innerHTML = "";
   for (var i = 0; i < recipe.instructions.length; i++) {
-    var li = document.createElement("li");
-    li.innerHTML = recipe.instructions[i];
-    instructionsList.appendChild(li);
+    instructionsList.innerHTML += "<li>" + recipe.instructions[i] + "</li>";
   }
 
   chefsTipsContainer.innerHTML = "";
-for (var i = 0; i < recipe.chefsTips.length; i++) {
-  var tipDiv = document.createElement("div");
-  tipDiv.className = "d-flex border-color-orange bg-red mb-3 p-3 rounded-3";
-  tipDiv.innerHTML = `
-    <i class="fa-solid fa-circle-check align-self-center me-2 color-yellow fw-700"></i>
-    <p class="text-black text-opacity-75">${recipe.chefsTips[i]}</p>
-  `;
-  chefsTipsContainer.appendChild(tipDiv);
-}
+  for (var i = 0; i < recipe.chefsTips.length; i++) {
+    chefsTipsContainer.innerHTML += `
+      <div class="d-flex border-color-orange bg-red mb-3 p-3 rounded-3">
+        <i class="fa-solid fa-circle-check align-self-center me-2 color-yellow fw-700"></i>
+        <p class="text-black text-opacity-75">${recipe.chefsTips[i]}</p>
+      </div>
+    `;
+  }
 
-    if (parseInt(recipe.cookTime) > 45) {
+  if (parseInt(recipe.cookTime) > 45) {
     longPrepMsg.style.display = "block";
   } else {
     longPrepMsg.style.display = "none";
@@ -566,4 +558,3 @@ for (var i = 0; i < recipe.chefsTips.length; i++) {
 }
 
 updateRecipe();
-
